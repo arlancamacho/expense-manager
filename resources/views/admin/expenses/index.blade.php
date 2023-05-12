@@ -13,7 +13,7 @@
     <div class="card-header">
         {{ trans('cruds.expense.title_singular') }} {{ trans('global.list') }}
     </div>
-
+asdasd
     <div class="card-body">
         <div class="table-responsive">
             <table class=" table table-bordered table-striped table-hover datatable datatable-Expense">
