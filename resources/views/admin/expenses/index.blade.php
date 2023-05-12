@@ -13,7 +13,6 @@
     <div class="card-header">
         {{ trans('cruds.expense.title_singular') }} {{ trans('global.list') }}
     </div>
-asdasd
     <div class="card-body">
         <div class="table-responsive">
             <table class=" table table-bordered table-striped table-hover datatable datatable-Expense">
@@ -24,9 +23,6 @@ asdasd
                         </th>
                         <th>
                             {{ trans('cruds.expense.fields.id') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.user.fields.name') }}
                         </th>
                         <th>
                             {{ trans('cruds.expense.fields.expense_category') }}
@@ -46,6 +42,7 @@ asdasd
                     </tr>
                 </thead>
                 <tbody>
+
                     @foreach($expenses as $key => $expense)
                         <tr data-entry-id="{{ $expense->id }} ">
                             <td>
@@ -53,11 +50,6 @@ asdasd
                             </td>
                             <td>
                                 {{ $expense->id ?? '' }}
-                            </td>
-                            <td>
-
-                                {{ $user->name ?? '' }}
-
                             </td>
                             <td>
                                 {{ $expense->expense_category->name ?? '' }}
@@ -96,7 +88,6 @@ asdasd
                             </td>
 
                         </tr>
-                    
                     @endforeach
                 </tbody>
             </table>

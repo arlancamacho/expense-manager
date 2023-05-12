@@ -9,6 +9,7 @@ use App\Http\Requests\MassDestroyExpenseRequest;
 use App\Http\Requests\StoreExpenseRequest;
 use App\Http\Requests\UpdateExpenseRequest;
 use Gate;
+use App\User;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -19,8 +20,9 @@ class ExpenseController extends Controller
         abort_if(Gate::denies('expense_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $expenses = Expense::all();
+        $users = User::all();
 
-        return view('admin.expenses.index', compact('expenses'));
+        return view('admin.expenses.index', compact('expenses', 'users'));
     }
 
     public function create()
